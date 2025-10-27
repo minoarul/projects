@@ -59,10 +59,10 @@
     align-items: center;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-   background-size: cover;   /* Makes the image cover the entire area */
-  background-repeat: no-repeat;  /* Prevents tiling */
-  background-position: center;
-  color: gold;
+   background-size: cover;  
+   background-repeat: no-repeat; 
+   color: gold;
+   text-shadow: 10px;
 
     
 }

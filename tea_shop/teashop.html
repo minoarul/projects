@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Tea & Juice Bar</title>
+</head>
+<body>
+    <h1>SAM TEA & JUICE BAR</h1>
+ 
+    
+
+    <script>
+        console.log("Welcome to SAM TEA & JUICE BAR!");
+
+        let shopName = "SAM TEA & JUICE BAR";
+        console.log("Shop Name:", shopName);
+
+        let shopAddress = "Ashok Nagar, Chennai";
+        console.log("Address:", shopAddress);
+
+        let contactNumber = "73396 72373";
+        console.log("Contact:", contactNumber);
+
+        let tea_category = ["Ginger Tea", "Masala Tea", "Special Tea", "Lemon Tea"];
+        let tea_prices = {GingerTea:15, MasalaTea:20, SpecialTea:25, LemonTea:15};
+        console.log("Tea Menu:", tea_category, tea_prices);
+
+        let coffee_category = ["Filter Coffee", "Cold Coffee", "Black Coffee"];
+        let coffee_prices = {FilterCoffee:20, ColdCoffee:30, BlackCoffee:18};
+        console.log("Coffee Menu:", coffee_category, coffee_prices);
+
+        let snacks_category = ["Samosa", "Egg Puffs", "Vadai", "Cake"];
+        let snacks_prices = {Samosa:15, EggPuffs:25, Vadai:10, Cake:20};
+        console.log("Snacks Menu:", snacks_category, snacks_prices);
+
+        let juices_category = ["Apple", "Pomegranate", "Watermelon", "Orange"];
+        let juices_prices = {Apple:100, Pomegranate:120, Watermelon:30, Orange:50};
+        console.log("Juices Menu:", juices_category, juices_prices);
+
+        // Customer Order Conversation
+        console.log("Customer: I want Special Tea");
+
+        let tea_available = false;
+
+        if (tea_available) {
+            console.log("Waiter: Yes sir, please wait 3 mins");
+        } else {
+            console.log("Waiter: Sorry sir, Special Tea is not available right now");
+            console.log("Customer: Okay, give me Pomegranate Juice");
+        }
+
+        let juice_available = true;
+
+        if (juice_available) {
+            console.log("Waiter: Yes sir, your Pomegranate juice will be ready in 5 mins");
+        }
+
+        console.log("Waiter: Sir, your juice is ready");
+
+        const bill_amount = 120;
+        console.log("Bill Amount: 120" + bill_amount);
+
+        console.log("Payment Method: UPI");
+        console.log("Payment Status: Paid");
+    </script>
+
+</body>
+</html>
