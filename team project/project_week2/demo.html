@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>தமிழ் மரபு புத்தகங்கள்</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      margin: 0;
+      background-color: #fff8f0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, #7b3f00, #c98439);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      color: #6b4b20;
+    }
+
+    .hero h2 {
+      color: #7b3f00;
+      font-size: 26px;
+    }
+
+    /* Book container */
+    .book-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 200px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      color: #7b3f00;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #6b4b20;
+    }
+
+    /* Button */
+    .add-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background-color: #c98439;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background-color: #a86a28;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>தமிழ் மரபு</h1>
+    <div class="nav-links">
+      <a href="#">முகப்பு</a>
+      <a href="#">புத்தகங்கள்</a>
+      <a href="#">பற்றி</a>
+      <a href="#">தொடர்பு</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h2>தமிழ் பாரம்பரியத்தை காப்போம் 📚</h2>
+    <p>இங்கே நீங்கள் தமிழ் கலாச்சாரம், மரபு மற்றும் இலக்கியம் சார்ந்த சிறந்த புத்தகங்களை காணலாம்.</p>
+  </div>
+
+  <div class="book-container" id="bookContainer">
+    <!-- Books will be added using DOM -->
+  </div>
+
+  <button class="add-btn" id="addBookBtn">புதிய புத்தகம் சேர்</button>
+
+  <script>
+    const books = [
+      { title: "திருக்குறள்", author: "திருவள்ளுவர்", img: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Thirukkural_Manuscript.jpg" },
+      { title: "சிலப்பதிகாரம்", author: "இளங்கோ அடிகள்", img: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Silappatikaram.jpg" },
+      { title: "புராணநூல்கள்", author: "பல தமிழ் முனிவர்கள்", img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Tamil_ancient_script.jpg" }
+    ];
+
+    const container = document.getElementById("bookContainer");
+
+    function displayBooks() {
+      container.innerHTML = "";
+      books.forEach(book => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${book.img}" alt="${book.title}">
+          <h3>${book.title}</h3>
+          <p>${book.author}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    document.getElementById("addBookBtn").addEventListener("click", () => {
+      const title = prompt("புத்தகத்தின் பெயரை உள்ளிடுங்கள்:");
+      const author = prompt("ஆசிரியரின் பெயரை உள்ளிடுங்கள்:");
+      const img = prompt("புத்தக படத்தின் URL (optional):", "https://via.placeholder.com/200x180");
+      if(title && author){
+        books.push({ title, author, img });
+        displayBooks();
+      } else {
+        alert("புத்தகத் தகவல் முழுமையாக வேண்டும்!");
+      }
+    });
+
+    // Initially load books
+    displayBooks();
+  </script>
+
+</body>
+</html>
