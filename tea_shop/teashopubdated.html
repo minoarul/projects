@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selvan Tea & Snacks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff8dc;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: #006400;
+      color: white;
+      padding: 15px;
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      margin-top: 10px;
+    }
+
+    .menu button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .menu button:hover {
+      background-color: #ff8c00;
+    }
+
+    .items button {
+      padding: 10px;
+      margin: 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #showImage {
+      width: 300px;
+      height: 200px;
+      margin-top: 15px;
+      display: none;
+      border-radius: 10px;
+    }
+
+    #payBtn {
+      background-color: #006400;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>☕ Selvan Tea & Snacks 🍪</h1>
+
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1500&q=80" alt="Tea Shop">
+
+  <div class="menu">
+    <button onclick="showMenu('tea')">Tea</button>
+    <button onclick="showMenu('coffee')">Coffee</button>
+    <button onclick="showMenu('snacks')">Snacks</button>
+    <button onclick="showMenu('juice')">Juices</button>
+  </div>
+
+  <!-- Menu Lists -->
+  <div id="tea" class="items" style="display:none;">
+    <button onclick="showPic('https://images.unsplash.com/photo-1603126857605-f385ff2b47fb?auto=format&fit=crop&w=800&q=80')">Masala Tea</button>
+    <button onclick="showPic('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80')">Ginger Tea</button>
+  </div>
+
+  <div id="coffee" class="items" style="display:none;">
+    <button onclick="showPic('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80')">Filter Coffee</button>
+    <button onclick="showPic('https://images.unsplash.com/photo-1514448553123-2969fdd02a20?auto=format&fit=crop&w=800&q=80')">Black Coffee</button>
+  </div>
+
+  <div id="snacks" class="items" style="display:none;">
+    <button onclick="showPic('https://images.unsplash.com/photo-1586201375761-83865001e31b?auto=format&fit=crop&w=800&q=80')">Samosa</button>
+    <button onclick="showPic('https://images.unsplash.com/photo-1608450786689-05ab18a0c4e2?auto=format&fit=crop&w=800&q=80')">Puffs</button>
+  </div>
+
+  <div id="juice" class="items" style="display:none;">
+    <button onclick="showPic('https://images.unsplash.com/photo-1627308595183-53919e4e5b2a?auto=format&fit=crop&w=800&q=80')">Watermelon</button>
+    <button onclick="showPic('https://images.unsplash.com/photo-1576402187873-5873b8328e6b?auto=format&fit=crop&w=800&q=80')">Orange</button>
+  </div>
+
+  <img id="showImage" src="" alt="Selected Item">
+
+  <br>
+  <button id="payBtn" onclick="pay()">💳 Make Payment</button>
+
+  <script>
+    function showMenu(menu) {
+      document.getElementById("tea").style.display = "none";
+      document.getElementById("coffee").style.display = "none";
+      document.getElementById("snacks").style.display = "none";
+      document.getElementById("juice").style.display = "none";
+      document.getElementById(menu).style.display = "block";
+    }
+
+    function showPic(url) {
+      const img = document.getElementById("showImage");
+      img.src = url;
+      img.style.display = "block";
+    }
+
+    function pay() {
+      alert("✅ Thank you for your order! Enjoy your drink 😄");
+    }
+  </script>
+</body>
+</html>
